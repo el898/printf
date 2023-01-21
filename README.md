@@ -1,2 +1,1 @@
-# printf
-c-printf group project
+Printf
