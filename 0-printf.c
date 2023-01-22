@@ -6,7 +6,7 @@
 
 /**
  * _printf - implements standard printf
- * @format - string to write on screen
+ * @format: string to write on screen
  *
  * Return: number of charecters printed
  */
@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	va_list ls;
 	char buff[100] = {0};
 	char *str;
-	int i,j;
+	int i, j;
 
 	i = 0;
 	j = 0;
