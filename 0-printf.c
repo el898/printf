@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 	va_list ls;
 	char buff[100] = {0};
 	char *str;
+	int i,j;
 
 	i = 0;
 	j = 0;
@@ -41,7 +42,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			buff[j] = format[i];
-			j++
+			j++;
 		}
 		i++;
 	}
