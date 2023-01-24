@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == '%')
 			{
-				buffer[j] = format[i];
+				buff[j] = format[i];
 				j++;
 			}
 			else if (format[i] == 'c')
