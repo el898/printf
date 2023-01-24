@@ -27,7 +27,12 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == 'c')
+			if (format[i] == '\0')
+			{
+				va_end(ls);
+				return (-1);
+			}
+			else if (format[i] == 'c')
 			{
 				buff[j] = (char)va_arg(ls, int);
 				j++;
