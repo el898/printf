@@ -32,6 +32,11 @@ int _printf(const char *format, ...)
 				va_end(ls);
 				return (-1);
 			}
+			else if (format[i] == '%')
+			{
+				buffer[j] = format[i];
+				j++;
+			}
 			else if (format[i] == 'c')
 			{
 				buff[j] = (char)va_arg(ls, int);
