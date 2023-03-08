@@ -1,5 +1,7 @@
 #include "main.h"
+
 /************************* PRINT CHAR *************************/
+
 /**
  * print_char - Prints a char
  * @types: List a of arguments
@@ -10,11 +12,8 @@
  * @size: Size specifier
  * Return: Number of chars printed
  */
-
 int print_char(va_list types, char buffer[],
-
 	int flags, int width, int precision, int size)
-
 {
 	char c = va_arg(types, int);
 
@@ -42,7 +41,6 @@ int print_string(va_list types, char buffer[],
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
-
 	if (str == NULL)
 	{
 		str = "(null)";
@@ -73,6 +71,7 @@ int print_string(va_list types, char buffer[],
 			return (width);
 		}
 	}
+
 	return (write(1, str, length));
 }
 /************************* PRINT PERCENT SIGN *************************/
@@ -113,16 +112,15 @@ int print_int(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i = BUFF_SIZE - 2;
-
 	int is_negative = 0;
-
 	long int n = va_arg(types, long int);
-
 	unsigned long int num;
 
 	n = convert_size_number(n, size);
+
 	if (n == 0)
 		buffer[i--] = '0';
+
 	buffer[BUFF_SIZE - 1] = '\0';
 	num = (unsigned long int)n;
 
@@ -139,11 +137,11 @@ int print_int(va_list types, char buffer[],
 	}
 
 	i++;
+
 	return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }
 
 /************************* PRINT BINARY *************************/
-
 /**
  * print_binary - Prints an unsigned number
  * @types: Lista of arguments
@@ -158,9 +156,7 @@ int print_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	unsigned int n, m, i, sum;
-
 	unsigned int a[32];
-
 	int count;
 
 	UNUSED(buffer);
@@ -185,7 +181,6 @@ int print_binary(va_list types, char buffer[],
 			char z = '0' + a[i];
 
 			write(1, &z, 1);
-
 			count++;
 		}
 	}
